@@ -1,1 +1,2 @@
 # List of source files which contain translatable strings.
+src/scim_thai_imengine_factory.cpp

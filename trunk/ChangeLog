@@ -1,3 +1,14 @@
+2006-07-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac, +po/LINGUAS: Listed languages with LINGUAS file instead
+	of the now-deprecated ALL_LINGUAS var in configure.
+	* configure.ac: Added missing AC_SUBST on LIBTOOL_EXPORT_OPTIONS.
+	* src/Makefile.am, +src/gettext.h, +src/intl.h,
+	src/scim_thai_imengine_factory.cpp: Added gettext.h and intl.h headers
+	and mark a message for translation test.
+	* src/scim_thai_imengine_factory.h: Fixed prototype in c-tor.
+	* +COPYING: Added to be explicit on licensing.
+
 2006-07-16  gettextize  <bug-gnu-gettext@gnu.org>
 
 	* Makefile.am (SUBDIRS): Add po.

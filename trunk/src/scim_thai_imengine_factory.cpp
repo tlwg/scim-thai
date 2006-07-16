@@ -119,7 +119,7 @@ ThaiIMEngineFactory::~ThaiIMEngineFactory ()
 WideString
 ThaiIMEngineFactory::get_name () const
 {
-    return utf8_mbstowcs (String ("Thai"));
+    return utf8_mbstowcs (String (_("Thai")));
 }
 
 WideString
