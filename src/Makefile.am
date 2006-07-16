@@ -3,6 +3,7 @@ AM_CPPFLAGS = \
 	-DSCIM_ICONDIR=\"@SCIM_ICONDIR@\"
 
 noinst_HEADERS = \
+	gettext.h \
 	intl.h \
 	scim_thai_imengine_factory.h \
 	scim_thai_imengine.h

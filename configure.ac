@@ -9,8 +9,7 @@ AC_CONFIG_HEADER([config.h])
 AM_INIT_AUTOMAKE
 
 # gettext
-ALL_LINGUAS="th"
-AM_GNU_GETTEXT
+AM_GNU_GETTEXT([external])
 GETTEXT_PACKAGE=scim-thai
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [The gettext domain])
@@ -24,6 +23,7 @@ AC_PROG_LIBTOOL
 # libtool option to control which symbols are exported
 # right now, symbols starting with _ are not exported
 LIBTOOL_EXPORT_OPTIONS='-export-symbols-regex "^[[^_]].*"'
+AC_SUBST(LIBTOOL_EXPORT_OPTIONS)
 
 # Checks for libraries.
 SCIM_VERSION=0.99.8

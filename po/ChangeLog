@@ -1,3 +1,10 @@
+2006-07-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* Makevars: Added for make's variables settings.
+	* LINGUAS: Added to list translated languages.
+	* POTFILES.in: Marked scim_thai_imengine_factory.cpp for translation.
+	* th.po: Added Thai translation.
+
 2006-07-16  gettextize  <bug-gnu-gettext@gnu.org>
 
 	* Makefile.in.in: New file, from gettext-0.14.5.

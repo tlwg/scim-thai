@@ -39,8 +39,7 @@ using namespace scim;
 class ThaiIMEngineFactory : public IMEngineFactoryBase
 {
 public:
-    ThaiIMEngineFactory (const String&        lang,
-                         const String&        uuid,
+    ThaiIMEngineFactory (const String&        uuid,
                          const ConfigPointer& config);
     virtual ~ThaiIMEngineFactory ();
 
