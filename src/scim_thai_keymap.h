@@ -17,33 +17,55 @@
  *  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
  */
 
-#ifndef __SCIM_THAI_IMENGINE_H__
-#define __SCIM_THAI_IMENGINE_H__
+#ifndef __SCIM_THAI_KEYMAP_H__
+#define __SCIM_THAI_KEYMAP_H__
 
 #include <scim.h>
-#include "scim_thai_keymap.h"
+#include <scim_event.h>
 
 using namespace scim;
 
-class ThaiIMEngineInstance : public IMEngineInstanceBase
+class ThaiKeymap
 {
 public:
-    ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
-                          const String&         encoding,
-                          int                   id = -1);
-    virtual ~ThaiIMEngineInstance ();
+    enum ThaiKeyboardLayout {
+        THAI_KEYBOARD_KETMANEE      = 0,
+        THAI_KEYBOARD_TIS820_2538   = 1,
+        THAI_KEYBOARD_PATTACHOTE    = 2,
+        THAI_KEYBOARD_NUM_LAYOUTS   = 3
+    };
 
-    virtual bool process_key_event             (const KeyEvent& key);
-    virtual void reset                         (void);
+public:
+    explicit ThaiKeymap (ThaiKeyboardLayout layout = THAI_KEYBOARD_KETMANEE);
+
+    void               set_layout (ThaiKeyboardLayout layout);
+    ThaiKeyboardLayout get_layout () const;
+
+    KeyEvent           map_key (const KeyEvent& rawkey);
 
 private:
-    ThaiIMEngineFactory*    m_factory;
-
-    ThaiKeymap              m_keymap;
-
-    KeyEvent                m_prev_key;
+    ThaiKeyboardLayout m_layout;
 };
-#endif /* __SCIM_THAI_IMENGINE_H__ */
+
+inline
+ThaiKeymap::ThaiKeymap (ThaiKeyboardLayout layout)
+    : m_layout (layout)
+{
+}
+
+inline void
+ThaiKeymap::set_layout (ThaiKeyboardLayout layout)
+{
+    m_layout = layout;
+}
+
+inline ThaiKeymap::ThaiKeyboardLayout
+ThaiKeymap::get_layout () const
+{
+    return m_layout;
+}
+
+#endif /* __SCIM_THAI_KEYMAP_H__ */
 /*
 vi:ts=4:nowrap:ai:expandtab
 */

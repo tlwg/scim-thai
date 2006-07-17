@@ -36,11 +36,6 @@
   #include <config.h>
 #endif
 
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-
 #include <scim.h>
 #include "scim_thai_imengine_factory.h"
 #include "scim_thai_imengine.h"
@@ -103,7 +98,7 @@ ThaiIMEngineFactory::ThaiIMEngineFactory (const String&        uuid,
     SCIM_DEBUG_IMENGINE(1) << "Create Thai Factory :\n";
     SCIM_DEBUG_IMENGINE(1) << "  UUID : " << uuid << "\n";
 
-    set_languages (String ("th_TH"));
+    set_languages (String ("th"));
 
     // config
     reload_config (m_config);
@@ -164,3 +159,6 @@ ThaiIMEngineFactory::reload_config (const ConfigPointer& config)
     if (!config) return;
 }
 
+/*
+vi:ts=4:nowrap:ai:expandtab
+*/

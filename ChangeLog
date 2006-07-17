@@ -1,3 +1,11 @@
+2006-07-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/Makefile.am, +src/scim_thai_keymap.{h,cpp}: Added ThaiKeymap
+	class for mapping us keysyms to th.
+	* src/scim_thai_imengine.{h,cpp}: Called ThaiKeymap in
+	process_key_event() and added filter for events to handle.
+	* src/scim_thai_imengine_factory.cpp: Replaced "th_TH" with "th".
+
 2006-07-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* configure.ac, +po/LINGUAS: Listed languages with LINGUAS file instead
