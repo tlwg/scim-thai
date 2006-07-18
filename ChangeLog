@@ -1,3 +1,10 @@
+2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac, src/Makefile.am: Added check for libthai and its
+	CFLAGS and LIBS.
+	* src/scim_thai_imengine.{h,cpp}: Added input sequence check codes
+	using libthai functions.
+
 2006-07-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* src/Makefile.am, +src/scim_thai_keymap.{h,cpp}: Added ThaiKeymap

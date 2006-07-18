@@ -27,6 +27,7 @@
 #endif
 
 #include <scim.h>
+#include <thai/thwctype.h>
 #include "scim_thai_imengine_factory.h"
 #include "scim_thai_imengine.h"
 #include "intl.h"
@@ -68,13 +69,74 @@ ThaiIMEngineInstance::ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
     : IMEngineInstanceBase (factory, encoding, id),
       m_factory (factory),
       m_keymap (ThaiKeymap::THAI_KEYBOARD_KETMANEE),
-      m_prev_key (0, 0)
+      m_isc_mode (ISC_BASICCHECK),
+      m_buff_tail (0)
 {
     SCIM_DEBUG_IMENGINE(1) << "Create THAI Instance : ";
+
+    memset (m_char_buff, 0, sizeof m_char_buff);
 }
 
 ThaiIMEngineInstance::~ThaiIMEngineInstance ()
 {
+}
+
+void
+ThaiIMEngineInstance::_forget_previous_chars ()
+{
+    m_char_buff [0] = '\0';
+    m_buff_tail = 0;
+}
+
+void
+ThaiIMEngineInstance::_remember_previous_char (thchar_t c)
+{
+    if (m_buff_tail == sizeof m_char_buff)
+    {
+        memmove (m_char_buff, m_char_buff + 1, sizeof m_char_buff - 1);
+        --m_buff_tail;
+    }
+    m_char_buff [m_buff_tail++] = c;
+}
+
+thcell_t
+ThaiIMEngineInstance::_get_previous_cell ()
+{
+    WideString surrounding;
+    int        cursor_index;
+    thcell_t   the_cell;
+
+    th_init_cell (&the_cell);
+
+    if (get_surrounding_text (surrounding, cursor_index))
+    {
+        thchar_t* tis_text = new thchar_t [cursor_index+1];
+        if (!tis_text)
+            goto exit_point;
+
+        tis_text [cursor_index] = '\0';
+        int begin_index = cursor_index;
+        while (begin_index > 0)
+        {
+            thchar_t c = th_uni2tis (surrounding [begin_index-1]);
+            if (c == THCHAR_ERR)
+                break;
+            tis_text [--begin_index] = c;
+        }
+        if (begin_index < cursor_index)
+        {
+            th_prev_cell (tis_text + begin_index, cursor_index - begin_index,
+                          &the_cell, true);
+        }
+        delete tis_text;
+    }
+    else
+    {
+        th_prev_cell (m_char_buff, m_buff_tail, &the_cell, true);
+    }
+
+exit_point:
+    return the_cell;
 }
 
 bool
@@ -85,25 +147,44 @@ ThaiIMEngineInstance::process_key_event (const KeyEvent& key)
                            << std::hex << key.mask << ","
                            << key.layout << ")\n";
 
-    if (key.is_key_release())
+    if (key.is_key_release()
+        || key.code == 0
+        || __is_context_intact_key (key.code))
+    {
         return false;
+    }
 
     if (key.mask & (SCIM_KEY_AllMasks
                     & ~(SCIM_KEY_ShiftMask | SCIM_KEY_CapsLockMask)) ||
         __is_context_lost_key (key.code))
     {
+        _forget_previous_chars ();
         return false;
     }
-    if (key.code == 0 || __is_context_intact_key (key.code))
+
+    KeyEvent  thai_key = m_keymap.map_key (key);
+    ucs4_t    thai_uni = thai_key.get_unicode_code ();
+
+    if (!th_wcistis (thai_uni))
+        return false;
+
+    thchar_t thai_tis = th_uni2tis (thai_uni);
+
+    thcell_t    context_cell = _get_previous_cell ();
+    thinpconv_t conv;
+    if (th_validate (context_cell, thai_tis, &conv))
     {
-        return false;
+        if (conv.offset < 0)
+            if (!delete_surrounding_text (conv.offset, -conv.offset))
+                return false;
+        _forget_previous_chars ();
+        _remember_previous_char (thai_tis);
+
+        WideString str;
+        for (int i = 0; conv.conv [i]; i++)
+            str.push_back (th_tis2uni (conv.conv [i]));
+        commit_string (str);
     }
-
-    KeyEvent thai_key = m_keymap.map_key (key);
-
-    WideString str;
-    str.push_back (thai_key.get_unicode_code());
-    commit_string (str);
 
     return true;
 }
