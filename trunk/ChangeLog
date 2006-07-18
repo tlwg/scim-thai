@@ -1,5 +1,11 @@
 2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	* src/scim_thai_imengine.{h,cpp},
+	src/scim_thai_imengine_factory.{h,cpp}, src/scim_thai_keymap.h:
+	Shortened class/type names. Rearranged source.
+
+2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	* src/scim_thai_imengine.{h,cpp}: Added get/set functions for ISC mode 
 	and keyboard layout. Also added c-tor params.
 	* src/scim_thai_imengine.cpp (~::process_key_event()): Called beep() 

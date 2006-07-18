@@ -36,12 +36,12 @@
 
 using namespace scim;
 
-class ThaiIMEngineFactory : public IMEngineFactoryBase
+class ThaiFactory : public IMEngineFactoryBase
 {
 public:
-    ThaiIMEngineFactory (const String&        uuid,
-                         const ConfigPointer& config);
-    virtual ~ThaiIMEngineFactory ();
+    ThaiFactory (const String&        uuid,
+                 const ConfigPointer& config);
+    virtual ~ThaiFactory ();
 
     virtual WideString  get_name      () const;
     virtual WideString  get_authors   () const;

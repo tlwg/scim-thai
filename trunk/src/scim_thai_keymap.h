@@ -28,7 +28,7 @@ using namespace scim;
 class ThaiKeymap
 {
 public:
-    enum ThaiKeyboardLayout {
+    enum Layout {
         THAI_KEYBOARD_KETMANEE      = 0,
         THAI_KEYBOARD_TIS820_2538   = 1,
         THAI_KEYBOARD_PATTACHOTE    = 2,
@@ -36,30 +36,30 @@ public:
     };
 
 public:
-    explicit ThaiKeymap (ThaiKeyboardLayout layout = THAI_KEYBOARD_KETMANEE);
+    explicit ThaiKeymap (Layout layout = THAI_KEYBOARD_KETMANEE);
 
-    void               set_layout (ThaiKeyboardLayout layout);
-    ThaiKeyboardLayout get_layout () const;
+    void      set_layout (Layout layout);
+    Layout    get_layout () const;
 
-    KeyEvent           map_key (const KeyEvent& rawkey);
+    KeyEvent  map_key (const KeyEvent& rawkey);
 
 private:
-    ThaiKeyboardLayout m_layout;
+    Layout  m_layout;
 };
 
 inline
-ThaiKeymap::ThaiKeymap (ThaiKeyboardLayout layout)
+ThaiKeymap::ThaiKeymap (Layout layout)
     : m_layout (layout)
 {
 }
 
 inline void
-ThaiKeymap::set_layout (ThaiKeyboardLayout layout)
+ThaiKeymap::set_layout (Layout layout)
 {
     m_layout = layout;
 }
 
-inline ThaiKeymap::ThaiKeyboardLayout
+inline ThaiKeymap::Layout
 ThaiKeymap::get_layout () const
 {
     return m_layout;
