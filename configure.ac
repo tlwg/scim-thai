@@ -103,5 +103,6 @@ AC_SUBST(SCIM_ICONDIR)
 AC_SUBST(SCIM_MODULEDIR)
         
 AC_CONFIG_FILES([Makefile po/Makefile.in
+                 data/Makefile
                  src/Makefile])
 AC_OUTPUT
