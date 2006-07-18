@@ -26,24 +26,24 @@
 
 using namespace scim;
 
-class ThaiIMEngineInstance : public IMEngineInstanceBase
+class ThaiInstance : public IMEngineInstanceBase
 {
 public:
     typedef thstrict_t TISCMode;
 
 public:
-    ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
-                          const String&         encoding,
-                          int                   id = -1,
-                          ThaiKeymap::ThaiKeyboardLayout layout = ThaiKeymap::THAI_KEYBOARD_KETMANEE,
-                          TISCMode              isc_mode = ISC_BASICCHECK);
-    virtual ~ThaiIMEngineInstance ();
+    ThaiInstance (ThaiFactory*       factory,
+                  const String&      encoding,
+                  int                id = -1,
+                  ThaiKeymap::Layout layout = ThaiKeymap::THAI_KEYBOARD_KETMANEE,
+                  TISCMode           isc_mode = ISC_BASICCHECK);
+    virtual ~ThaiInstance ();
 
     void         set_isc_mode (TISCMode mode);
-    void         set_keyboard_layout (ThaiKeymap::ThaiKeyboardLayout layout);
+    void         set_keyboard_layout (ThaiKeymap::Layout layout);
 
     TISCMode     get_isc_mode () const;
-    ThaiKeymap::ThaiKeyboardLayout get_keyboard_layout () const;
+    ThaiKeymap::Layout get_keyboard_layout () const;
 
     // IMEngineInstanceBase virtual methods
     virtual bool process_key_event             (const KeyEvent& key);
@@ -63,25 +63,25 @@ private:
 };
 
 inline void
-ThaiIMEngineInstance::set_isc_mode (TISCMode mode)
+ThaiInstance::set_isc_mode (TISCMode mode)
 {
     m_isc_mode = mode;
 }
 
 inline void
-ThaiIMEngineInstance::set_keyboard_layout (ThaiKeymap::ThaiKeyboardLayout layout)
+ThaiInstance::set_keyboard_layout (ThaiKeymap::Layout layout)
 {
     m_keymap.set_layout (layout);
 }
 
-inline ThaiIMEngineInstance::TISCMode
-ThaiIMEngineInstance::get_isc_mode () const
+inline ThaiInstance::TISCMode
+ThaiInstance::get_isc_mode () const
 {
     return m_isc_mode;
 }
 
-inline ThaiKeymap::ThaiKeyboardLayout
-ThaiIMEngineInstance::get_keyboard_layout () const
+inline ThaiKeymap::Layout
+ThaiInstance::get_keyboard_layout () const
 {
     return m_keymap.get_layout ();
 }

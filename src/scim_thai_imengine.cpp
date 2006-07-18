@@ -36,11 +36,11 @@ static bool __is_context_lost_key (uint32 keycode);
 static bool __is_context_intact_key (uint32 keycode);
 
 
-ThaiIMEngineInstance::ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
-                                            const String&         encoding,
-                                            int                   id,
-                                            ThaiKeymap::ThaiKeyboardLayout layout,
-                                            TISCMode              isc_mode)
+ThaiInstance::ThaiInstance (ThaiFactory*       factory,
+                            const String&      encoding,
+                            int                id,
+                            ThaiKeymap::Layout layout,
+                            TISCMode           isc_mode)
     : IMEngineInstanceBase (factory, encoding, id),
       m_keymap (layout),
       m_isc_mode (isc_mode),
@@ -49,19 +49,19 @@ ThaiIMEngineInstance::ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
     memset (m_char_buff, 0, sizeof m_char_buff);
 }
 
-ThaiIMEngineInstance::~ThaiIMEngineInstance ()
+ThaiInstance::~ThaiInstance ()
 {
 }
 
 void
-ThaiIMEngineInstance::_forget_previous_chars ()
+ThaiInstance::_forget_previous_chars ()
 {
     m_char_buff [0] = '\0';
     m_buff_tail = 0;
 }
 
 void
-ThaiIMEngineInstance::_remember_previous_char (thchar_t c)
+ThaiInstance::_remember_previous_char (thchar_t c)
 {
     if (m_buff_tail == sizeof m_char_buff)
     {
@@ -72,7 +72,7 @@ ThaiIMEngineInstance::_remember_previous_char (thchar_t c)
 }
 
 thcell_t
-ThaiIMEngineInstance::_get_previous_cell ()
+ThaiInstance::_get_previous_cell ()
 {
     WideString surrounding;
     int        cursor_index;
@@ -143,7 +143,7 @@ __is_context_intact_key (uint32 keycode)
 }
 
 bool
-ThaiIMEngineInstance::process_key_event (const KeyEvent& key)
+ThaiInstance::process_key_event (const KeyEvent& key)
 {
     if (key.is_key_release()
         || key.code == 0
@@ -192,7 +192,7 @@ ThaiIMEngineInstance::process_key_event (const KeyEvent& key)
 }
 
 void
-ThaiIMEngineInstance::reset ()
+ThaiInstance::reset ()
 {
 }
 

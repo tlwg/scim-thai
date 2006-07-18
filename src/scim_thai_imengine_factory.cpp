@@ -75,11 +75,11 @@ extern "C" {
 
     IMEngineFactoryPointer scim_imengine_module_create_factory (uint32 engine)
     {
-        ThaiIMEngineFactory *factory = 0;
+        ThaiFactory *factory = 0;
 
         try {
-            factory = new ThaiIMEngineFactory (String ("63752e02-c9cb-420c-bac6-f17f60a16822"),
-                                               _scim_config);
+            factory = new ThaiFactory (String ("63752e02-c9cb-420c-bac6-f17f60a16822"),
+                                       _scim_config);
         } catch (...) {
             delete factory;
             factory = 0;
@@ -90,8 +90,8 @@ extern "C" {
 }
 
 
-ThaiIMEngineFactory::ThaiIMEngineFactory (const String&        uuid,
-                                          const ConfigPointer& config)
+ThaiFactory::ThaiFactory (const String&        uuid,
+                          const ConfigPointer& config)
     : m_uuid (uuid),
       m_config (config)
 {
@@ -103,58 +103,58 @@ ThaiIMEngineFactory::ThaiIMEngineFactory (const String&        uuid,
     // config
     reload_config (m_config);
     m_reload_signal_connection
-        = m_config->signal_connect_reload (slot (this, &ThaiIMEngineFactory::reload_config));
+        = m_config->signal_connect_reload (slot (this, &ThaiFactory::reload_config));
 }
 
-ThaiIMEngineFactory::~ThaiIMEngineFactory ()
+ThaiFactory::~ThaiFactory ()
 {
     m_reload_signal_connection.disconnect ();
 }
 
 WideString
-ThaiIMEngineFactory::get_name () const
+ThaiFactory::get_name () const
 {
     return utf8_mbstowcs (String (_("Thai")));
 }
 
 WideString
-ThaiIMEngineFactory::get_authors () const
+ThaiFactory::get_authors () const
 {
     return utf8_mbstowcs (String ("Theppitak Karoonboonyanan <thep@linux.thai.net>"));
 }
 
 WideString
-ThaiIMEngineFactory::get_credits () const
+ThaiFactory::get_credits () const
 {
     return WideString ();
 }
 
 WideString
-ThaiIMEngineFactory::get_help () const
+ThaiFactory::get_help () const
 {
     return WideString ();
 }
 
 String
-ThaiIMEngineFactory::get_uuid () const
+ThaiFactory::get_uuid () const
 {
     return m_uuid;
 }
 
 String
-ThaiIMEngineFactory::get_icon_file () const
+ThaiFactory::get_icon_file () const
 {
     return String (SCIM_THAI_ICON_FILE);
 }
 
 IMEngineInstancePointer
-ThaiIMEngineFactory::create_instance (const String& encoding, int id)
+ThaiFactory::create_instance (const String& encoding, int id)
 {
-    return new ThaiIMEngineInstance (this, encoding, id);
+    return new ThaiInstance (this, encoding, id);
 }
 
 void
-ThaiIMEngineFactory::reload_config (const ConfigPointer& config)
+ThaiFactory::reload_config (const ConfigPointer& config)
 {
     if (!config) return;
 }
