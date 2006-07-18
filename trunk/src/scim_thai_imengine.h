@@ -21,12 +21,16 @@
 #define __SCIM_THAI_IMENGINE_H__
 
 #include <scim.h>
+#include <thai/thinp.h>
 #include "scim_thai_keymap.h"
 
 using namespace scim;
 
 class ThaiIMEngineInstance : public IMEngineInstanceBase
 {
+public:
+    typedef thstrict_t TISCMode;
+
 public:
     ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
                           const String&         encoding,
@@ -37,12 +41,20 @@ public:
     virtual void reset                         (void);
 
 private:
+    void      _forget_previous_chars ();
+    void      _remember_previous_char (thchar_t c);
+    thcell_t  _get_previous_cell ();
+
+private:
     ThaiIMEngineFactory*    m_factory;
 
     ThaiKeymap              m_keymap;
 
-    KeyEvent                m_prev_key;
+    TISCMode                m_isc_mode;
+    thchar_t                m_char_buff[4];
+    short                   m_buff_tail;
 };
+
 #endif /* __SCIM_THAI_IMENGINE_H__ */
 /*
 vi:ts=4:nowrap:ai:expandtab

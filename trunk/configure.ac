@@ -26,6 +26,10 @@ LIBTOOL_EXPORT_OPTIONS='-export-symbols-regex "^[[^_]].*"'
 AC_SUBST(LIBTOOL_EXPORT_OPTIONS)
 
 # Checks for libraries.
+
+dnl *************
+dnl     SCIM
+dnl *************
 SCIM_VERSION=0.99.8
 
 PKG_CHECK_MODULES(SCIM,[scim >= $SCIM_VERSION])
@@ -46,6 +50,12 @@ else
 fi
 
 AC_SUBST(SCIM_BUILD_SETUP)
+
+dnl *************
+dnl    libthai
+dnl *************
+
+PKG_CHECK_MODULES(LIBTHAI, libthai)
 
 # Checks for header files.
 
