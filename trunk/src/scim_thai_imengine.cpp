@@ -32,36 +32,9 @@
 #include "scim_thai_imengine.h"
 #include "intl.h"
 
-static bool
-__is_context_lost_key (uint32 keycode)
-{
-  return ((keycode & 0xFF00) == 0xFF00) &&
-          (keycode == SCIM_KEY_BackSpace ||
-           keycode == SCIM_KEY_Tab ||
-           keycode == SCIM_KEY_Linefeed ||
-           keycode == SCIM_KEY_Clear ||
-           keycode == SCIM_KEY_Return ||
-           keycode == SCIM_KEY_Pause ||
-           keycode == SCIM_KEY_Scroll_Lock ||
-           keycode == SCIM_KEY_Sys_Req ||
-           keycode == SCIM_KEY_Escape ||
-           keycode == SCIM_KEY_Delete ||
-           (SCIM_KEY_Home <= keycode && keycode <= SCIM_KEY_Begin) || /* IsCursorkey */
-           (SCIM_KEY_KP_Space <= keycode && keycode <= SCIM_KEY_KP_Delete) || /* IsKeypadKey, non-chars only */
-           (SCIM_KEY_Select <= keycode && keycode <= SCIM_KEY_Break) || /* IsMiscFunctionKey */
-           (SCIM_KEY_F1 <= keycode && keycode <= SCIM_KEY_F35)); /* IsFunctionKey */
-}
+static bool __is_context_lost_key (uint32 keycode);
+static bool __is_context_intact_key (uint32 keycode);
 
-static bool
-__is_context_intact_key (uint32 keycode)
-{
-  return (((keycode & 0xFF00) == 0xFF00) &&
-          ((SCIM_KEY_Shift_L <= keycode && keycode <= SCIM_KEY_Hyper_R) || /* IsModifierKey */
-           (keycode == SCIM_KEY_Mode_switch) ||
-           (keycode == SCIM_KEY_Num_Lock))) ||
-         (((keycode & 0xFE00) == 0xFE00) &&
-          (SCIM_KEY_ISO_Lock <= keycode && keycode <= SCIM_KEY_ISO_Last_Group_Lock));
-}
 
 ThaiIMEngineInstance::ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
                                             const String&         encoding,
@@ -72,8 +45,6 @@ ThaiIMEngineInstance::ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
       m_isc_mode (ISC_BASICCHECK),
       m_buff_tail (0)
 {
-    SCIM_DEBUG_IMENGINE(1) << "Create THAI Instance : ";
-
     memset (m_char_buff, 0, sizeof m_char_buff);
 }
 
@@ -139,14 +110,40 @@ exit_point:
     return the_cell;
 }
 
+static bool
+__is_context_lost_key (uint32 keycode)
+{
+  return ((keycode & 0xFF00) == 0xFF00) &&
+          (keycode == SCIM_KEY_BackSpace ||
+           keycode == SCIM_KEY_Tab ||
+           keycode == SCIM_KEY_Linefeed ||
+           keycode == SCIM_KEY_Clear ||
+           keycode == SCIM_KEY_Return ||
+           keycode == SCIM_KEY_Pause ||
+           keycode == SCIM_KEY_Scroll_Lock ||
+           keycode == SCIM_KEY_Sys_Req ||
+           keycode == SCIM_KEY_Escape ||
+           keycode == SCIM_KEY_Delete ||
+           (SCIM_KEY_Home <= keycode && keycode <= SCIM_KEY_Begin) || /* IsCursorkey */
+           (SCIM_KEY_KP_Space <= keycode && keycode <= SCIM_KEY_KP_Delete) || /* IsKeypadKey, non-chars only */
+           (SCIM_KEY_Select <= keycode && keycode <= SCIM_KEY_Break) || /* IsMiscFunctionKey */
+           (SCIM_KEY_F1 <= keycode && keycode <= SCIM_KEY_F35)); /* IsFunctionKey */
+}
+
+static bool
+__is_context_intact_key (uint32 keycode)
+{
+  return (((keycode & 0xFF00) == 0xFF00) &&
+          ((SCIM_KEY_Shift_L <= keycode && keycode <= SCIM_KEY_Hyper_R) || /* IsModifierKey */
+           (keycode == SCIM_KEY_Mode_switch) ||
+           (keycode == SCIM_KEY_Num_Lock))) ||
+         (((keycode & 0xFE00) == 0xFE00) &&
+          (SCIM_KEY_ISO_Lock <= keycode && keycode <= SCIM_KEY_ISO_Last_Group_Lock));
+}
+
 bool
 ThaiIMEngineInstance::process_key_event (const KeyEvent& key)
 {
-    SCIM_DEBUG_IMENGINE(2) << "process_key_event ";
-    SCIM_DEBUG_IMENGINE(2) << "(" << std::hex << key.code << ","
-                           << std::hex << key.mask << ","
-                           << key.layout << ")\n";
-
     if (key.is_key_release()
         || key.code == 0
         || __is_context_intact_key (key.code))
@@ -192,7 +189,6 @@ ThaiIMEngineInstance::process_key_event (const KeyEvent& key)
 void
 ThaiIMEngineInstance::reset ()
 {
-    SCIM_DEBUG_IMENGINE(2) << "reset.\n";
 }
 
 /*
