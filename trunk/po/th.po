@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: scim-thai\n"
 "Report-Msgid-Bugs-To: thep@linux.thai.net\n"
-"POT-Creation-Date: 2006-07-16 22:59+0700\n"
+"POT-Creation-Date: 2006-07-18 14:21+0700\n"
 "PO-Revision-Date: 2006-07-16 23:02+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <l10n@opentle.org>\n"
@@ -15,6 +15,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/scim_thai_imengine_factory.cpp:122
+#: src/scim_thai_imengine_factory.cpp:117
 msgid "Thai"
 msgstr "ไทย"

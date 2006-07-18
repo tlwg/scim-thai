@@ -1,5 +1,12 @@
 2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	* src/scim_thai_imengine.{h,cpp}: Added get/set functions for ISC mode 
+	and keyboard layout. Also added c-tor params.
+	* src/scim_thai_imengine.cpp (~::process_key_event()): Called beep() 
+	on key validation failure.
+
+2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	* configure.ac, Makefile.am, +data/Makefile.am, +data/scim-thai.png:
 	Added icon.
 
