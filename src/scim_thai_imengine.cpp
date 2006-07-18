@@ -38,11 +38,12 @@ static bool __is_context_intact_key (uint32 keycode);
 
 ThaiIMEngineInstance::ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
                                             const String&         encoding,
-                                            int                   id)
+                                            int                   id,
+                                            ThaiKeymap::ThaiKeyboardLayout layout,
+                                            TISCMode              isc_mode)
     : IMEngineInstanceBase (factory, encoding, id),
-      m_factory (factory),
-      m_keymap (ThaiKeymap::THAI_KEYBOARD_KETMANEE),
-      m_isc_mode (ISC_BASICCHECK),
+      m_keymap (layout),
+      m_isc_mode (isc_mode),
       m_buff_tail (0)
 {
     memset (m_char_buff, 0, sizeof m_char_buff);
@@ -181,6 +182,10 @@ ThaiIMEngineInstance::process_key_event (const KeyEvent& key)
         for (int i = 0; conv.conv [i]; i++)
             str.push_back (th_tis2uni (conv.conv [i]));
         commit_string (str);
+    }
+    else
+    {
+        beep ();
     }
 
     return true;

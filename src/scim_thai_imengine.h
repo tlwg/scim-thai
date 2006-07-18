@@ -34,9 +34,18 @@ public:
 public:
     ThaiIMEngineInstance (ThaiIMEngineFactory*  factory,
                           const String&         encoding,
-                          int                   id = -1);
+                          int                   id = -1,
+                          ThaiKeymap::ThaiKeyboardLayout layout = ThaiKeymap::THAI_KEYBOARD_KETMANEE,
+                          TISCMode              isc_mode = ISC_BASICCHECK);
     virtual ~ThaiIMEngineInstance ();
 
+    void         set_isc_mode (TISCMode mode);
+    void         set_keyboard_layout (ThaiKeymap::ThaiKeyboardLayout layout);
+
+    TISCMode     get_isc_mode () const;
+    ThaiKeymap::ThaiKeyboardLayout get_keyboard_layout () const;
+
+    // IMEngineInstanceBase virtual methods
     virtual bool process_key_event             (const KeyEvent& key);
     virtual void reset                         (void);
 
@@ -46,14 +55,36 @@ private:
     thcell_t  _get_previous_cell ();
 
 private:
-    ThaiIMEngineFactory*    m_factory;
-
     ThaiKeymap              m_keymap;
 
     TISCMode                m_isc_mode;
     thchar_t                m_char_buff[4];
     short                   m_buff_tail;
 };
+
+inline void
+ThaiIMEngineInstance::set_isc_mode (TISCMode mode)
+{
+    m_isc_mode = mode;
+}
+
+inline void
+ThaiIMEngineInstance::set_keyboard_layout (ThaiKeymap::ThaiKeyboardLayout layout)
+{
+    m_keymap.set_layout (layout);
+}
+
+inline ThaiIMEngineInstance::TISCMode
+ThaiIMEngineInstance::get_isc_mode () const
+{
+    return m_isc_mode;
+}
+
+inline ThaiKeymap::ThaiKeyboardLayout
+ThaiIMEngineInstance::get_keyboard_layout () const
+{
+    return m_keymap.get_layout ();
+}
 
 #endif /* __SCIM_THAI_IMENGINE_H__ */
 /*
