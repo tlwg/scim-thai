@@ -26,6 +26,8 @@
 
 using namespace scim;
 
+class ThaiFactory;
+
 class ThaiInstance : public IMEngineInstanceBase
 {
 public:

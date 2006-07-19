@@ -33,6 +33,7 @@
 
 #define Uses_SCIM_ICONV
 #include <scim.h>
+#include "scim_thai_imengine.h"
 
 using namespace scim;
 
@@ -64,6 +65,8 @@ private:
     Connection     m_reload_signal_connection;
 
     /* for preference */
+    ThaiKeymap::Layout     m_pref_kb_layout;
+    ThaiInstance::TISCMode m_pref_isc_mode;
 
     /* for key bindings */
 };
