@@ -1,3 +1,9 @@
+2006-07-19  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/scim_thai_imengine_factory.{h,cpp}: Read config in
+	reload_config() and stored values for instance creation.
+	* src/scim_thai_imengine.h: Forward declared ThaiFactory class.
+
 2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* src/scim_thai_imengine.{h,cpp},

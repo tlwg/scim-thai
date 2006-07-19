@@ -50,6 +50,9 @@
     #define SCIM_THAI_ICON_FILE           (SCIM_ICONDIR"/scim-thai.png")
 #endif
 
+#define SCIM_CONFIG_IMENGINE_THAI_KB_LAYOUT  "/IMEngine/Thai/KbLayout"
+#define SCIM_CONFIG_IMENGINE_THAI_ISC_MODE   "/IMEngine/Thai/ISCMode"
+
 static ConfigPointer _scim_config (0);
 
 extern "C" {
@@ -150,13 +153,52 @@ ThaiFactory::get_icon_file () const
 IMEngineInstancePointer
 ThaiFactory::create_instance (const String& encoding, int id)
 {
-    return new ThaiInstance (this, encoding, id);
+    return new ThaiInstance (this, encoding, id,
+                             m_pref_kb_layout, m_pref_isc_mode);
 }
 
 void
 ThaiFactory::reload_config (const ConfigPointer& config)
 {
     if (!config) return;
+
+    String str;
+
+    /* Read Keyboard Layout */
+    str = config->read (String (SCIM_CONFIG_IMENGINE_THAI_KB_LAYOUT),
+                        String ("Ketmanee"));
+
+    if (str == String ("Ketmanee"))
+        m_pref_kb_layout = ThaiKeymap::THAI_KEYBOARD_KETMANEE;
+    else if (str == String ("TIS-820.2538"))
+        m_pref_kb_layout = ThaiKeymap::THAI_KEYBOARD_TIS820_2538;
+    else if (str == String ("Pattachote"))
+        m_pref_kb_layout = ThaiKeymap::THAI_KEYBOARD_PATTACHOTE;
+    else
+    {
+        SCIM_DEBUG_IMENGINE(1) << "Unknown Keyboard Layout '"
+                               << str.c_str()
+                               << "', default to 'Ketmanee'.\n";
+        m_pref_kb_layout = ThaiKeymap::THAI_KEYBOARD_KETMANEE;
+    }
+
+    /* Read Input Sequence Check Mode */
+    str = config->read (String (SCIM_CONFIG_IMENGINE_THAI_ISC_MODE),
+                        String ("BasicCheck"));
+
+    if (str == String ("BasicCheck"))
+        m_pref_isc_mode = ISC_BASICCHECK;
+    else if (str == String ("Passthrough"))
+        m_pref_isc_mode = ISC_PASSTHROUGH;
+    else if (str == String ("Strict"))
+        m_pref_isc_mode = ISC_STRICT;
+    else
+    {
+        SCIM_DEBUG_IMENGINE(1) << "Unknown Input Sequence Check Mode '"
+                               << str.c_str()
+                               << "', default to 'BasicCheck'.\n";
+        m_pref_isc_mode = ISC_BASICCHECK;
+    }
 }
 
 /*
