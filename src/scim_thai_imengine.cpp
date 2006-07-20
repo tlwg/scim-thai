@@ -19,7 +19,6 @@
 
 #define Uses_SCIM_UTILITY
 #define Uses_SCIM_IMENGINE
-#define Uses_SCIM_LOOKUP_TABLE
 #define Uses_SCIM_CONFIG_BASE
 
 #ifdef HAVE_CONFIG_H
