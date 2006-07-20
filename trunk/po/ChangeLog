@@ -1,3 +1,8 @@
+2006-07-20  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* POTFILES.in: Added scim_thai_imengine_setup.cpp.
+	* th.po: Updated Thai translation.
+
 2006-07-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* Makevars: Added for make's variables settings.
