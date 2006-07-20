@@ -1,0 +1,7 @@
+Makefile.in
+Makefile
+POTFILES
+remove-potcdate.sed
+scim-thai.pot
+*.gmo
+stamp-po

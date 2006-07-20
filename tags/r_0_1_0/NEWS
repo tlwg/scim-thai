@@ -1,0 +1,7 @@
+Version 0.1.0 (2006-07-20)
+=============
+- Initial release.
+- Keyboard layout supports: Ketmanee, TIS-820.2538, Pattachote.
+- Input sequence check/correction using libthai.
+- Setup GUI.
+
