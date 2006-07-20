@@ -39,6 +39,7 @@
 #include <scim.h>
 #include "scim_thai_imengine_factory.h"
 #include "scim_thai_imengine.h"
+#include "scim_thai_imengine_config.h"
 #include "intl.h"
 
 /* SCIM Related Definitions */
@@ -46,12 +47,6 @@
 #define scim_module_exit thai_LTX_scim_module_exit
 #define scim_imengine_module_init thai_LTX_scim_imengine_module_init
 #define scim_imengine_module_create_factory thai_LTX_scim_imengine_module_create_factory
-#ifndef SCIM_THAI_ICON_FILE
-    #define SCIM_THAI_ICON_FILE           (SCIM_ICONDIR"/scim-thai.png")
-#endif
-
-#define SCIM_CONFIG_IMENGINE_THAI_KB_LAYOUT  "/IMEngine/Thai/KbLayout"
-#define SCIM_CONFIG_IMENGINE_THAI_ISC_MODE   "/IMEngine/Thai/ISCMode"
 
 static ConfigPointer _scim_config (0);
 

@@ -1,3 +1,10 @@
+2006-07-20  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/Makefile.am, +src/scim_thai_imengine_config.h,
+	+src/scim_thai_imengine_setup.cpp, src/scim_thai_imengine_factory.cpp:
+	Added setup GUI. Split configuration variables into a common header.
+	* src/scim_thai_imengine.cpp: Removed excessive Uses_LOOKUP_TABLE.
+
 2006-07-19  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* src/scim_thai_imengine_factory.{h,cpp}: Read config in
