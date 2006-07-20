@@ -1,0 +1,19 @@
+Source: scim-thai
+Section: utils
+Priority: optional
+Maintainer: Theppitak Karoonboonyanan <thep@linux.thai.net>
+Build-Depends: debhelper (>= 5), autotools-dev, pkg-config, gettext, libscim-dev, libthai-dev
+Standards-Version: 3.7.2
+
+Package: scim-thai
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, scim
+Description: Thai Input Method Engine for SCIM
+ SCIM (Smart Common Input Method) is an input method (IM) platform.
+ .
+ This package provides Thai Input Method Engine for SCIM.  Currently, it 
+ supports Ketmanee, TIS-820.2538 and Pattachote keyboards; three levels 
+ of strictness for input sequence check.
+ .
+ Homepage: http://libthai.sourceforge.net/
+
