@@ -1,5 +1,11 @@
 2006-07-20  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	* README: Added some info.
+	* configure.in, NEWS:
+	=== Version 0.1.0 ===
+
+2006-07-20  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	* src/Makefile.am, +src/scim_thai_imengine_config.h,
 	+src/scim_thai_imengine_setup.cpp, src/scim_thai_imengine_factory.cpp:
 	Added setup GUI. Split configuration variables into a common header.
