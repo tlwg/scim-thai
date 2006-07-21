@@ -7,7 +7,7 @@ Standards-Version: 3.7.2
 
 Package: scim-thai
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, scim, libthai0
+Depends: ${shlibs:Depends}, ${misc:Depends}, scim
 Description: Thai Input Method Engine for SCIM
  SCIM (Smart Common Input Method) is an input method (IM) platform.
  .
