@@ -1,6 +1,6 @@
-scim-thai (0.1.0-0) UNRELEASED; urgency=low
+scim-thai (0.1.0-1) unstable; urgency=low
 
-  * Internal release.
+  * Initial release. (Closes: #379010)
 
- -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Thu, 20 Jul 2006 14:37:28 +0700
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Fri, 21 Jul 2006 08:32:06 +0700
 
