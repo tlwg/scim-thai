@@ -7,7 +7,7 @@ echo "Applying libtoolize..."
 libtoolize --force
 
 echo "Applying gettextize..."
-gettextize
+gettextize --force
 
 echo "Applying aclocal..."
 aclocal
