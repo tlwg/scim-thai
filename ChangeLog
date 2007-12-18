@@ -1,3 +1,8 @@
+2007-12-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/scim_thai_imengine.cpp: Add missing #include <string.h>, fixing
+	FTBFS with gcc-4.3 (Debian Bug #455624).
+
 2006-09-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* configure.in: Post-release version bump.
