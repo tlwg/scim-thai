@@ -25,6 +25,7 @@
   #include <config.h>
 #endif
 
+#include <string.h>
 #include <scim.h>
 #include <thai/thwctype.h>
 #include "scim_thai_imengine_factory.h"
