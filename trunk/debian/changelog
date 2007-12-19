@@ -1,3 +1,15 @@
+scim-thai (0.1.0-3) unstable; urgency=low
+
+  * src/scim_thai_imengine.cpp: Add missing include file, fixing FTBFS with
+    gcc-4.3. (Closes: #455624)
+  * debian/copyright: Rewrite in machine-interpretable format.
+  * debian/rules: Do not ignore 'make distclean' error.
+  * Add Vcs-Cvs, Vcs-Browser control fields.
+  * Add Homepage control field and remove Homepage info from description.
+  * Bump standards version to 3.7.3.0, no change needed.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Wed, 19 Dec 2007 08:47:40 +0700
+
 scim-thai (0.1.0-2) unstable; urgency=low
 
   * Install shared objects from usr/lib/scim-1.0/1.4.0/* instead of
