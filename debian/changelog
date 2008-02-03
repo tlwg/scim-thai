@@ -1,3 +1,9 @@
+scim-thai (0.1.0-4) UNRELEASED; urgency=low
+
+  * Fix CVSROOT in Vcs-Cvs, so it really works with debcheckout.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 03 Feb 2008 10:47:17 +0700
+
 scim-thai (0.1.0-3) unstable; urgency=low
 
   * src/scim_thai_imengine.cpp: Add missing include file, fixing FTBFS with

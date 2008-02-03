@@ -3,7 +3,7 @@ Section: utils
 Priority: optional
 Maintainer: Theppitak Karoonboonyanan <thep@linux.thai.net>
 Build-Depends: debhelper (>= 5), autotools-dev, pkg-config, gettext, chrpath, libscim-dev (>= 1.4.6-1), libthai-dev
-Vcs-Cvs: pserver:anonymous@linux.thai.net:/home/cvs software/scim-thai
+Vcs-Cvs: :pserver:anonymous@linux.thai.net:/home/cvs software/scim-thai
 Vcs-Browser: http://linux.thai.net/viewvc/viewvc.cgi/software/scim-thai
 Homepage: http://libthai.sourceforge.net
 Standards-Version: 3.7.3.0
