@@ -1,0 +1,84 @@
+# Thai translation of scim-thai.
+# Copyright (C) 2006 Theppitak Karoonboonyanan <thep@linux.thai.net>
+# This file is distributed under the same license as the scim-thai package.
+# Theppitak Karoonboonyanan <thep@linux.thai.net>, 2006.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: scim-thai\n"
+"Report-Msgid-Bugs-To: thep@linux.thai.net\n"
+"POT-Creation-Date: 2006-07-20 11:22+0700\n"
+"PO-Revision-Date: 2006-07-20 11:32+0700\n"
+"Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
+"Language-Team: Thai <l10n@opentle.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/scim_thai_imengine_factory.cpp:115 src/scim_thai_imengine_setup.cpp:75
+msgid "Thai"
+msgstr "ไทย"
+
+#: src/scim_thai_imengine_setup.cpp:80
+msgid "An IMEngine Module for Thai."
+msgstr "มอดูลป้อนข้อความภาษาไทย"
+
+#: src/scim_thai_imengine_setup.cpp:178
+msgid "Keyboard layout:"
+msgstr "ผังแป้นพิมพ์:"
+
+#: src/scim_thai_imengine_setup.cpp:194
+msgid "_Ketmanee"
+msgstr "เ_กษมณี"
+
+#: src/scim_thai_imengine_setup.cpp:200
+msgid "The traditional typewriter layout, the most popular one in the market."
+msgstr "ผังแป้นพิมพ์ของพิมพ์ดีดทั่วไป ซึ่งเป็นผังที่แพร่หลายที่สุดในตลาด"
+
+#: src/scim_thai_imengine_setup.cpp:210
+msgid "_TIS-820.2538"
+msgstr "ม_อก. 820-2538"
+
+#: src/scim_thai_imengine_setup.cpp:216
+msgid ""
+"National standard layout derived from Ketmanee, with some extra characters."
+msgstr "ผังแป้นพิมพ์มาตรฐานผลิตภัณฑ์อุตสาหกรรม ปรับเปลี่ยนจากเกษมณี โดยมีอักขระพิเศษเพิ่ม"
+
+#: src/scim_thai_imengine_setup.cpp:226
+msgid "_Pattachote"
+msgstr "_ปัตตะโชติ"
+
+#: src/scim_thai_imengine_setup.cpp:232
+msgid ""
+"Keyboard layout designed by Sarit Pattachote from a statistical research."
+msgstr "ผังแป้นพิมพ์ซึ่งออกแบบโดยคุณสฤษดิ์ ปัตตะโชติ จากงานวิจัยทางสถิติ"
+
+#: src/scim_thai_imengine_setup.cpp:241
+msgid "Input sequence check mode:"
+msgstr "รูปแบบการตรวจสอบลำดับอักขระ:"
+
+#: src/scim_thai_imengine_setup.cpp:257
+msgid "_No Check"
+msgstr "ไ_ม่ตรวจ"
+
+#: src/scim_thai_imengine_setup.cpp:262
+msgid "Let all key sequences pass through."
+msgstr "อนุญาตให้พิมพ์ได้ทุกลำดับ"
+
+#: src/scim_thai_imengine_setup.cpp:271
+msgid "_Basic Check"
+msgstr "_พื้นฐาน"
+
+#: src/scim_thai_imengine_setup.cpp:277
+msgid ""
+"Check using basic rule, just to guarantee character order to be suitable for "
+"display."
+msgstr "ตรวจสอบลำดับโดยใช้กฎพื้นฐาน เพียงเพื่อให้ลำดับอักขระเหมาะแก่การแสดงผลเท่านั้น"
+
+#: src/scim_thai_imengine_setup.cpp:287
+msgid "_Strict Check"
+msgstr "เ_ข้มงวด"
+
+#: src/scim_thai_imengine_setup.cpp:293
+msgid "Check using more strict orthographical rules."
+msgstr "ตรวจสอบลำดับโดยใช้กฎอักขรวิธีที่เข้มงวดขึ้น"

@@ -1,0 +1,40 @@
+scim-thai (0.1.0-4) UNRELEASED; urgency=low
+
+  * Fix CVSROOT in Vcs-Cvs, so it really works with debcheckout.
+  * Build-dep on dpkg-dev (>= 1.14.13), for proper support of Vcs-Cvs field.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 03 Feb 2008 22:30:59 +0700
+
+scim-thai (0.1.0-3) unstable; urgency=low
+
+  * src/scim_thai_imengine.cpp: Add missing include file, fixing FTBFS with
+    gcc-4.3. (Closes: #455624)
+  * debian/copyright: Rewrite in machine-interpretable format.
+  * debian/rules: Do not ignore 'make distclean' error.
+  * Add Vcs-Cvs, Vcs-Browser control fields.
+  * Add Homepage control field and remove Homepage info from description.
+  * Bump standards version to 3.7.3.0, no change needed.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Wed, 19 Dec 2007 08:47:40 +0700
+
+scim-thai (0.1.0-2) unstable; urgency=low
+
+  * Install shared objects from usr/lib/scim-1.0/1.4.0/* instead of
+    usr/lib/scim-1.0/*, according to new upstream change, fixing FTBFS.
+    (Closes: #422957)
+  * Build-Depends on libscim-dev (>= 1.4.6-1).
+  * Bump standards version to 3.7.2.2, no change needed.
+  * debian/dirs: remove, unneeded.
+  * debian/rules: pass --host=$(DEB_HOST_GNU_TYPE) to configure only when
+    cross compiling.
+  * Remove rpath info in *.so using chrpath.
+  * Don't include config.{guess,sub} in .diff.gz.
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 20 May 2007 21:35:11 +0700
+
+scim-thai (0.1.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #379010)
+
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Fri, 21 Jul 2006 08:32:06 +0700
+
