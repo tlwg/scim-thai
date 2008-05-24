@@ -1,5 +1,10 @@
 2008-05-24  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	* NEWS:
+	=== Version 0.1.1 ===
+
+2008-05-24  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	* Makefile.am: Remove mkinstalldirs from EXTRA_DIST, fixing
 	'make dist' error.
 	* ChangeLog: Fix typos configure.in -> configure.ac.
