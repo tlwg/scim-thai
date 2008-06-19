@@ -1,9 +1,18 @@
-scim-thai (0.1.0-4) UNRELEASED; urgency=low
+scim-thai (0.1.1-1) unstable; urgency=low
 
   * Fix CVSROOT in Vcs-Cvs, so it really works with debcheckout.
   * Build-dep on dpkg-dev (>= 1.14.13), for proper support of Vcs-Cvs field.
+  * New upstream release
+    - Drop patch for gcc-4.3 FTBFS, merged upstream
+  * debian/copyright: Update format to current proposal.
+  * debian/install: Also install translations.
+  * debian/control:
+    - Drop -1 from versioned build-deps
+    - Decapitalize some words in the long description
+    - Add DM-Upload-Allowed
+    - Bump Standards-Version to 3.8.0 (no changes needed)
 
- -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Sun, 03 Feb 2008 22:30:59 +0700
+ -- Theppitak Karoonboonyanan <thep@linux.thai.net>  Wed, 18 Jun 2008 15:16:46 +0700
 
 scim-thai (0.1.0-3) unstable; urgency=low
 
