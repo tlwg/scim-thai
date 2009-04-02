@@ -30,6 +30,11 @@ else
 	CFLAGS += -O2
 endif
 
+LDFLAGS = -Wl,-z,defs
+
+# Override scim-gtkutils libs, to get minimal set of linked libraries
+SCIM_GTKUTILS_LIBS = -lgtk-x11-2.0 -lscim-1.0 -lm -lgobject-2.0
+
 config.status: configure
 	dh_testdir
 ifneq "$(wildcard /usr/share/misc/config.sub)" ""
@@ -39,7 +44,10 @@ ifneq "$(wildcard /usr/share/misc/config.guess)" ""
 	cp -f /usr/share/misc/config.guess config.guess
 endif
 	# Add here commands to configure the package.
-	./configure $(build_flags) --prefix=/usr --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info CFLAGS="$(CFLAGS)" LDFLAGS="-Wl,-z,defs"
+	./configure $(build_flags) --prefix=/usr \
+	  --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
+	  CFLAGS="$(CFLAGS)" LDFLAGS="$(LDFLAGS)" \
+	  SCIM_GTKUTILS_LIBS="$(SCIM_GTKUTILS_LIBS)"
 
 
 build: build-stamp
@@ -56,7 +64,6 @@ build-stamp:  config.status
 clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp 
 
 	# Add here commands to clean up after the build process.
 	[ ! -f Makefile ] || $(MAKE) distclean
@@ -72,7 +79,7 @@ endif
 install: build
 	dh_testdir
 	dh_testroot
-	dh_clean -k 
+	dh_prep
 	dh_installdirs
 
 	# Add here commands to install the package into debian/scim-thai.
@@ -97,7 +104,6 @@ binary-arch: build install
 	dh_strip
 	dh_compress
 	dh_fixperms
-	dh_makeshlibs --noscripts
 	dh_installdeb
 	dh_shlibdeps
 	dh_gencontrol
