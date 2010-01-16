@@ -1,3 +1,13 @@
+scim-thai (0.1.1-4) unstable; urgency=low
+
+  * debian/rules: Fix failure to build twice in a row:
+    - Fix typo '$(MAKE) maintainerclan'
+    - Clean other changed files left over from 'make maintainer-clean'
+    - 'config.status' depends on 'configure.ac' instead of 'configure'
+    - Make sure m4/ exists before auroreconf 
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Sat, 16 Jan 2010 17:28:27 +0700
+
 scim-thai (0.1.1-3) unstable; urgency=low
 
   * debian/control:

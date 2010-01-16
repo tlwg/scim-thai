@@ -35,9 +35,12 @@ LDFLAGS = -Wl,-z,defs
 # Override scim-gtkutils libs, to get minimal set of linked libraries
 SCIM_GTKUTILS_LIBS = -lgtk-x11-2.0 -lscim-1.0 -lm -lgobject-2.0
 
-config.status: configure
+config.status: configure.ac
 	dh_testdir
+
+	[ -d m4 ] || mkdir m4
 	autoreconf --install
+
 	# Add here commands to configure the package.
 	./configure $(build_flags) --prefix=/usr \
 	  --mandir=\$${prefix}/share/man --infodir=\$${prefix}/share/info \
@@ -61,7 +64,10 @@ clean:
 	dh_testroot
 
 	# Add here commands to clean up after the build process.
-	[ ! -f Makefile ] || $(MAKE) maintainerclean
+	[ ! -f Makefile ] || $(MAKE) maintainer-clean
+	rm -f aclocal.m4 config.h.in configure ltmain.sh
+	find . -name Makefile.in -exec rm -f {} \;
+	rm -rf m4
 
 	dh_clean 
 
