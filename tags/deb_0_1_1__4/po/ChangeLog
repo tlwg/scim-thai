@@ -1,0 +1,24 @@
+2006-07-20  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* POTFILES.in: Added scim_thai_imengine_setup.cpp.
+	* th.po: Updated Thai translation.
+
+2006-07-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* Makevars: Added for make's variables settings.
+	* LINGUAS: Added to list translated languages.
+	* POTFILES.in: Marked scim_thai_imengine_factory.cpp for translation.
+	* th.po: Added Thai translation.
+
+2006-07-16  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.in.in: New file, from gettext-0.14.5.
+	* boldquot.sed: New file, from gettext-0.14.5.
+	* en@boldquot.header: New file, from gettext-0.14.5.
+	* en@quot.header: New file, from gettext-0.14.5.
+	* insert-header.sin: New file, from gettext-0.14.5.
+	* quot.sed: New file, from gettext-0.14.5.
+	* remove-potcdate.sin: New file, from gettext-0.14.5.
+	* Rules-quot: New file, from gettext-0.14.5.
+	* POTFILES.in: New file.
+
