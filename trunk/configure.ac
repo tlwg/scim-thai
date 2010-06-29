@@ -2,13 +2,14 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(scim-thai, 0.1.1, thep@linux.thai.net)
+AC_INIT(scim-thai, 0.1.1svn, thep@linux.thai.net)
 AC_CONFIG_SRCDIR([src/scim_thai_imengine.h])
 AC_CONFIG_HEADER([config.h])
 
 AM_INIT_AUTOMAKE
 
 # gettext
+AM_GNU_GETTEXT_VERSION([0.18.1])
 AM_GNU_GETTEXT([external])
 GETTEXT_PACKAGE=scim-thai
 AC_SUBST(GETTEXT_PACKAGE)
