@@ -6,14 +6,8 @@ autoheader
 echo "Applying libtoolize..."
 libtoolize --force
 
-echo "Applying gettextize..."
-cp configure.ac configure.ac.bk
-cp Makefile.am Makefile.am.bk
-
-gettextize --force --no-changelog
-
-mv Makefile.am.bk Makefile.am
-mv configure.ac.bk configure.ac
+echo "Applying autopoint..."
+autopoint -f
 
 echo "Applying aclocal..."
 aclocal

@@ -1,3 +1,11 @@
+2010-06-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac: Post-release version suffix added.
+
+	* configure.ac: Add AM_GNU_GETTEXT_VERSION() macro so that gettext
+	  files can be updated with autopoint.
+	* autogen.sh: Invoke autopoint instead of gettextize.
+
 2008-05-24  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* NEWS:
