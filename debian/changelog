@@ -1,3 +1,15 @@
+scim-thai (0.1.1-5) unstable; urgency=medium
+
+  * Urgency medium due to RC bug fix.
+  * Fix FTBFS due to mismatched version of gettext files (Closes: #584394)
+    - debian/patches/01-gettext-version.patch: Added to add
+      AM_GNU_GETTEXT_VERSION macro to configure.ac
+    - debian/control: Build-depends on autopoint
+    - debian/rules: Invoke autopoint
+  * Bump Standards-Version to 3.9.0 (no changes needed)
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Tue, 29 Jun 2010 16:32:28 +0700
+
 scim-thai (0.1.1-4) unstable; urgency=low
 
   * debian/rules: Fix failure to build twice in a row:

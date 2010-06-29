@@ -39,6 +39,7 @@ config.status: configure.ac
 	dh_testdir
 
 	[ -d m4 ] || mkdir m4
+	autopoint -f
 	autoreconf --install
 
 	# Add here commands to configure the package.
