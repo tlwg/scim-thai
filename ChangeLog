@@ -1,5 +1,14 @@
 2010-06-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	* configure.ac: Add AC_CONFIG_MACRO_DIR() as suggested by libtoolize
+	message.
+	* Makefile.am: Remove unrelated m4/ChangeLog from EXTRA_DIST.
+	* src/Makefile.am: Add $(LIBTHAI_CFLAGS) to CFLAGS for building
+	thai_imengine_setup.la, fixing FTBFS when libthai is not installed in
+	standard include dirs.
+
+2010-06-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	* configure.ac: Post-release version suffix added.
 
 	* configure.ac: Add AM_GNU_GETTEXT_VERSION() macro so that gettext
