@@ -35,8 +35,10 @@ setupmodule_LTLIBRARIES = thai-imengine-setup.la
 
 thai_imengine_setup_la_SOURCES = scim_thai_imengine_setup.cpp
 
-thai_imengine_setup_la_CFLAGS = $(SCIM_GTKUTILS_CFLAGS) $(SCIM_CFLAGS)
-thai_imengine_setup_la_CXXFLAGS = $(SCIM_GTKUTILS_CFLAGS) $(SCIM_CFLAGS)
+thai_imengine_setup_la_CFLAGS = \
+	$(SCIM_GTKUTILS_CFLAGS) $(SCIM_CFLAGS) $(LIBTHAI_CFLAGS)
+thai_imengine_setup_la_CXXFLAGS = \
+	$(SCIM_GTKUTILS_CFLAGS) $(SCIM_CFLAGS) $(LIBTHAI_CFLAGS)
 
 thai_imengine_setup_la_LDFLAGS = \
 	-avoid-version \

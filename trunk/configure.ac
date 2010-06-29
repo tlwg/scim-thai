@@ -5,6 +5,7 @@ AC_PREREQ(2.59)
 AC_INIT(scim-thai, 0.1.1svn, thep@linux.thai.net)
 AC_CONFIG_SRCDIR([src/scim_thai_imengine.h])
 AC_CONFIG_HEADER([config.h])
+AC_CONFIG_MACRO_DIR([m4])
 
 AM_INIT_AUTOMAKE
 
