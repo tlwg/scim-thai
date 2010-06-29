@@ -7,7 +7,13 @@ echo "Applying libtoolize..."
 libtoolize --force
 
 echo "Applying gettextize..."
-gettextize --force
+cp configure.ac configure.ac.bk
+cp Makefile.am Makefile.am.bk
+
+gettextize --force --no-changelog
+
+mv Makefile.am.bk Makefile.am
+mv configure.ac.bk configure.ac
 
 echo "Applying aclocal..."
 aclocal
