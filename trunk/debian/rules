@@ -69,6 +69,8 @@ clean:
 	rm -f aclocal.m4 config.h.in configure ltmain.sh
 	find . -name Makefile.in -exec rm -f {} \;
 	rm -rf m4
+	rm -f ABOUT-NLS config.rpath po/Makefile.in.in po/Makevars.template \
+	      po/Rules-quot
 
 	dh_clean 
 

@@ -1,3 +1,11 @@
+scim-thai (0.1.1-6) unstable; urgency=medium
+
+  * Urgency still medium, to let RC bug fix in previous upload get in.
+  * debian/rules: Clean autopoint-generated files on clean target, to prevent
+    extra patch when building twice in a row.
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Wed, 30 Jun 2010 17:04:32 +0700
+
 scim-thai (0.1.1-5) unstable; urgency=medium
 
   * Urgency medium due to RC bug fix.
