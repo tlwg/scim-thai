@@ -2,13 +2,13 @@ Source: scim-thai
 Section: utils
 Priority: optional
 Maintainer: Theppitak Karoonboonyanan <thep@debian.org>
-Build-Depends: debhelper (>= 7), dpkg-dev (>= 1.14.13), libtool, automake,
- autoconf, pkg-config, gettext, autopoint, chrpath, libscim-dev (>= 1.4.6),
- libthai-dev
+Build-Depends: debhelper (>= 7), dpkg-dev (>= 1.14.13), libtool, libltdl-dev,
+ automake, autoconf, pkg-config, gettext, autopoint, chrpath,
+ libscim-dev (>= 1.4.6), libthai-dev
 Vcs-Svn: http://linux.thai.net/svn/software/scim-thai
 Vcs-Browser: http://linux.thai.net/websvn/wsvn/software.scim-thai/?sc=0
 Homepage: http://libthai.sourceforge.net
-Standards-Version: 3.9.0
+Standards-Version: 3.9.1
 
 Package: scim-thai
 Architecture: any
