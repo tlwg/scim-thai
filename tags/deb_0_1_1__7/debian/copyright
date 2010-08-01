@@ -1,0 +1,17 @@
+Format-Specification: http://wiki.debian.org/Proposals/CopyrightFormat?action=recall&rev=454
+Upstream-Name: scim-thai
+Upstream-Maintainer: Theppitak Karoonboonyanan <thep@linux.thai.net>
+Upstream-Source: ftp://linux.thai.net/pub/thailinux/software/libthai/
+
+Files: *
+Copyright: © 2006-2008 Theppitak Karoonboonyanan <thep@linux.thai.net>
+License: GPL-2+
+
+Files: debian/*
+Copyright: © 2006-2009 Theppitak Karoonboonyanan <thep@debian.org>
+License: GPL-2+
+
+License: GPL-2+
+ On Debian GNU/Linux systems, the complete text of the GNU General Public
+ License can be found in `/usr/share/common-licenses/GPL-2'.
+

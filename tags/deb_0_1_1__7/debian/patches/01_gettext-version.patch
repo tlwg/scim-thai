@@ -1,0 +1,21 @@
+Description: Update gettext files with autopoint
+ Add AM_GNU_GETTEXT_VERSION macro to configure.ac so that gettext files can be
+ automatically updated with autopoint. I will apply it upstream myself soon.
+Author: Theppitak Karoonboonyanan <thep@debian.org>
+Bug-Debian: http://bugs.debian.org/584394
+Last-Update: 2010-06-29
+
+* configure.ac: Add AM_GNU_GETTEXT_VERSION() macro
+
+Index: scim-thai/configure.ac
+===================================================================
+--- scim-thai.orig/configure.ac	2010-06-29 16:01:26.290265063 +0700
++++ scim-thai/configure.ac	2010-06-29 16:02:01.616825481 +0700
+@@ -9,6 +9,7 @@
+ AM_INIT_AUTOMAKE
+ 
+ # gettext
++AM_GNU_GETTEXT_VERSION([0.18.1])
+ AM_GNU_GETTEXT([external])
+ GETTEXT_PACKAGE=scim-thai
+ AC_SUBST(GETTEXT_PACKAGE)
