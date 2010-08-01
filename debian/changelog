@@ -1,3 +1,12 @@
+scim-thai (0.1.1-7) unstable; urgency=medium
+
+  * Urgency medium due to RC bug fix.
+  * Fix another FTBFS (Closes: #591171)
+    - Add explicit Build-Depends on libltdl-dev.
+  * Bump Standards-Version to 3.9.1 (no changes needed)
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Sun, 01 Aug 2010 17:25:41 +0700
+
 scim-thai (0.1.1-6) unstable; urgency=medium
 
   * Urgency still medium, to let RC bug fix in previous upload get in.
