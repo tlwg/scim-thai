@@ -1,3 +1,9 @@
+2011-06-26  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/Makefile.am (thai_la_LDFLAGS, thai_imengine_setup_la_LDFLAGS):
+	Split libraries into *_LIBADD targets, to allow "-Wl,--as-needed"
+	or other configured LDFLAGS insertion before -lxxx flags.
+
 2010-06-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
 	* configure.ac: Add AC_CONFIG_MACRO_DIR() as suggested by libtoolize
