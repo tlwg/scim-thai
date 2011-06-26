@@ -25,7 +25,8 @@ thai_la_LDFLAGS = \
 	-avoid-version \
 	-rpath $(moduledir) \
 	-module \
-	$(LIBTOOL_EXPORT_OPTIONS) \
+	$(LIBTOOL_EXPORT_OPTIONS)
+thai_la_LIBADD = \
 	$(SCIM_LIBS) \
 	$(LIBTHAI_LIBS)
 
@@ -44,7 +45,8 @@ thai_imengine_setup_la_LDFLAGS = \
 	-avoid-version \
 	-rpath $(moduledir) \
 	-module \
-	$(LIBTOOL_EXPORT_OPTIONS) \
+	$(LIBTOOL_EXPORT_OPTIONS)
+thai_imengine_setup_la_LIBADD = \
 	$(SCIM_GTKUTILS_LIBS) \
 	$(SCIM_LIBS)
 endif
