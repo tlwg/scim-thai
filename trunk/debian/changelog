@@ -1,3 +1,23 @@
+scim-thai (0.1.2-1) unstable; urgency=low
+
+  * New upstream release
+    - Drop patch, merged upstream.
+  * debian/copyright:
+    - Updated to DEP-5 rev 174.
+    - Update copyright years.
+  * debian/rules, debian/control:
+    - Switch to dh 7 + dh-autoreconf
+    - Use "-Wl,--as-needed" LDFLAGS, thus require dh-autoreconf (>= 4)
+      with "--as-needed" option
+    - Use debian/tmp destdir for dh_auto_install, so dh_install can later
+      selectively install files.
+    - Skip dh_makeshlibs to avoid meaningless shlibs files and ldconfig calls
+  * debian/install:
+    - Use wildcards for *.so
+  * Bump Standards-Version to 3.9.2 (no changes needed)
+
+ -- Theppitak Karoonboonyanan <thep@debian.org>  Mon, 27 Jun 2011 11:03:08 +0700
+
 scim-thai (0.1.1-7) unstable; urgency=medium
 
   * Urgency medium due to RC bug fix.
