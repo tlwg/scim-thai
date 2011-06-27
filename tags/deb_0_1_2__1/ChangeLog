@@ -1,0 +1,126 @@
+2011-06-27  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac, NEWS:
+	=== Version 0.1.2 ===
+
+2011-06-26  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/Makefile.am (thai_la_LDFLAGS, thai_imengine_setup_la_LDFLAGS):
+	Split libraries into *_LIBADD targets, to allow "-Wl,--as-needed"
+	or other configured LDFLAGS insertion before -lxxx flags.
+
+2010-06-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac: Add AC_CONFIG_MACRO_DIR() as suggested by libtoolize
+	message.
+	* Makefile.am: Remove unrelated m4/ChangeLog from EXTRA_DIST.
+	* src/Makefile.am: Add $(LIBTHAI_CFLAGS) to CFLAGS for building
+	thai_imengine_setup.la, fixing FTBFS when libthai is not installed in
+	standard include dirs.
+
+2010-06-29  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac: Post-release version suffix added.
+
+	* configure.ac: Add AM_GNU_GETTEXT_VERSION() macro so that gettext
+	  files can be updated with autopoint.
+	* autogen.sh: Invoke autopoint instead of gettextize.
+
+2008-05-24  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* NEWS:
+	=== Version 0.1.1 ===
+
+2008-05-24  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* Makefile.am: Remove mkinstalldirs from EXTRA_DIST, fixing
+	'make dist' error.
+	* ChangeLog: Fix typos configure.in -> configure.ac.
+
+2007-12-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/scim_thai_imengine.cpp: Add missing #include <string.h>, fixing
+	FTBFS with gcc-4.3 (Debian Bug #455624).
+
+2006-09-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac: Post-release version bump.
+
+2006-07-20  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* README: Added some info.
+	* configure.ac, NEWS:
+	=== Version 0.1.0 ===
+
+2006-07-20  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/Makefile.am, +src/scim_thai_imengine_config.h,
+	+src/scim_thai_imengine_setup.cpp, src/scim_thai_imengine_factory.cpp:
+	Added setup GUI. Split configuration variables into a common header.
+	* src/scim_thai_imengine.cpp: Removed excessive Uses_LOOKUP_TABLE.
+
+2006-07-19  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/scim_thai_imengine_factory.{h,cpp}: Read config in
+	reload_config() and stored values for instance creation.
+	* src/scim_thai_imengine.h: Forward declared ThaiFactory class.
+
+2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/scim_thai_imengine.{h,cpp},
+	src/scim_thai_imengine_factory.{h,cpp}, src/scim_thai_keymap.h:
+	Shortened class/type names. Rearranged source.
+
+2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/scim_thai_imengine.{h,cpp}: Added get/set functions for ISC mode 
+	and keyboard layout. Also added c-tor params.
+	* src/scim_thai_imengine.cpp (~::process_key_event()): Called beep() 
+	on key validation failure.
+
+2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac, Makefile.am, +data/Makefile.am, +data/scim-thai.png:
+	Added icon.
+
+2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/scim_thai_imengine.cpp: Rearranged source.
+
+2006-07-18  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac, src/Makefile.am: Added check for libthai and its
+	CFLAGS and LIBS.
+	* src/scim_thai_imengine.{h,cpp}: Added input sequence check codes
+	using libthai functions.
+
+2006-07-17  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* src/Makefile.am, +src/scim_thai_keymap.{h,cpp}: Added ThaiKeymap
+	class for mapping us keysyms to th.
+	* src/scim_thai_imengine.{h,cpp}: Called ThaiKeymap in
+	process_key_event() and added filter for events to handle.
+	* src/scim_thai_imengine_factory.cpp: Replaced "th_TH" with "th".
+
+2006-07-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* configure.ac, +po/LINGUAS: Listed languages with LINGUAS file instead
+	of the now-deprecated ALL_LINGUAS var in configure.
+	* configure.ac: Added missing AC_SUBST on LIBTOOL_EXPORT_OPTIONS.
+	* src/Makefile.am, +src/gettext.h, +src/intl.h,
+	src/scim_thai_imengine_factory.cpp: Added gettext.h and intl.h headers
+	and mark a message for translation test.
+	* src/scim_thai_imengine_factory.h: Fixed prototype in c-tor.
+	* +COPYING: Added to be explicit on licensing.
+
+2006-07-16  gettextize  <bug-gnu-gettext@gnu.org>
+
+	* Makefile.am (SUBDIRS): Add po.
+	(ACLOCAL_AMFLAGS): New variable.
+	(EXTRA_DIST): New variable.
+	* configure.ac (AC_CONFIG_FILES): Add po/Makefile.in.
+
+2006-07-16  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
+	* === Initially created the project ===
+
