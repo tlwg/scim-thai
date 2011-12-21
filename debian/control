@@ -6,7 +6,7 @@ Build-Depends: debhelper (>= 7.0.50~), dh-autoreconf (>= 4), libltdl-dev,
  pkg-config, gettext, autopoint, chrpath, libscim-dev (>= 1.4.6), libthai-dev
 Vcs-Svn: http://linux.thai.net/svn/software/scim-thai
 Vcs-Browser: http://linux.thai.net/websvn/wsvn/software.scim-thai/?sc=0
-Homepage: http://libthai.sourceforge.net
+Homepage: http://linux.thai.net/projects/libthai
 Standards-Version: 3.9.2
 
 Package: scim-thai
