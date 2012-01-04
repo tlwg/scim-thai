@@ -1,5 +1,0 @@
-# Compulsory line, this is a version 3 file
-version=3
-
-opts=pasv ftp://linux.thai.net/pub/thailinux/software/libthai/scim-thai-(.*)\.tar\.gz debian uupdate
-

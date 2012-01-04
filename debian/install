@@ -1,4 +1,0 @@
-usr/lib/scim-1.0/*/IMEngine/*.so
-usr/lib/scim-1.0/*/SetupUI/*.so
-usr/share/locale/*
-usr/share/scim/icons/*
