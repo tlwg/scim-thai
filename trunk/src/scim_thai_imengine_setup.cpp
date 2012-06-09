@@ -164,14 +164,11 @@ create_setup_window ()
         GtkWidget*   label;
         GtkWidget*   vbox;
         GtkWidget*   alignment;
-        GtkTooltips* tooltips;
         GSList*      layout_radiobutton_group = NULL;
         GSList*      isc_radiobutton_group = NULL;
 
-        tooltips = gtk_tooltips_new ();
-
         // Create the top level box.
-        window = gtk_vbox_new (FALSE, 0);
+        window = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
         gtk_widget_show (window);
 
         // Keyboard Layout section
@@ -185,7 +182,7 @@ create_setup_window ()
         gtk_container_add (GTK_CONTAINER (window), alignment);
         gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 0, 0, 12, 0);
 
-        vbox = gtk_vbox_new (FALSE, 0);
+        vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
         gtk_widget_show (vbox);
         gtk_container_add (GTK_CONTAINER (alignment), vbox);
 
@@ -195,11 +192,11 @@ create_setup_window ()
         gtk_widget_show (__ketmanee_radio);
         gtk_box_pack_start (GTK_BOX (vbox), __ketmanee_radio,
                             FALSE, FALSE, 0);
-        gtk_tooltips_set_tip (tooltips,
-                              __ketmanee_radio,
-                              _("The traditional typewriter layout, the most "
-                                "popular one in the market."),
-                              NULL);
+        gtk_widget_set_tooltip_text (
+            __ketmanee_radio,
+            _("The traditional typewriter layout, the most "
+            "popular one in the market.")
+        );
         gtk_radio_button_set_group (GTK_RADIO_BUTTON (__ketmanee_radio),
                                     layout_radiobutton_group);
         layout_radiobutton_group
@@ -211,11 +208,11 @@ create_setup_window ()
         gtk_widget_show (__tis820_2538_radio);
         gtk_box_pack_start (GTK_BOX (vbox), __tis820_2538_radio,
                             FALSE, FALSE, 0);
-        gtk_tooltips_set_tip (tooltips,
-                              __tis820_2538_radio,
-                              _("National standard layout derived from Ketmanee, "
-                                "with some extra characters."),
-                              NULL);
+        gtk_widget_set_tooltip_text (
+            __tis820_2538_radio,
+            _("National standard layout derived from Ketmanee, "
+            "with some extra characters.")
+        );
         gtk_radio_button_set_group (GTK_RADIO_BUTTON (__tis820_2538_radio),
                                     layout_radiobutton_group);
         layout_radiobutton_group
@@ -227,11 +224,11 @@ create_setup_window ()
         gtk_widget_show (__pattachote_radio);
         gtk_box_pack_start (GTK_BOX (vbox), __pattachote_radio,
                             FALSE, FALSE, 0);
-        gtk_tooltips_set_tip (tooltips,
-                              __pattachote_radio,
-                              _("Keyboard layout designed by Sarit Pattachote "
-                                "from a statistical research."),
-                              NULL);
+        gtk_widget_set_tooltip_text (
+            __pattachote_radio,
+            _("Keyboard layout designed by Sarit Pattachote "
+            "from a statistical research.")
+        );
         gtk_radio_button_set_group (GTK_RADIO_BUTTON (__pattachote_radio),
                                     layout_radiobutton_group);
         layout_radiobutton_group
@@ -248,7 +245,7 @@ create_setup_window ()
         gtk_container_add (GTK_CONTAINER (window), alignment);
         gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 0, 0, 12, 0);
 
-        vbox = gtk_vbox_new (FALSE, 0);
+        vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
         gtk_widget_show (vbox);
         gtk_container_add (GTK_CONTAINER (alignment), vbox);
 
@@ -257,10 +254,10 @@ create_setup_window ()
             = gtk_radio_button_new_with_mnemonic (NULL, _("_No Check"));
         gtk_widget_show (__nocheck_radio);
         gtk_box_pack_start (GTK_BOX (vbox), __nocheck_radio, FALSE, FALSE, 0);
-        gtk_tooltips_set_tip (tooltips,
-                              __nocheck_radio,
-                              _("Let all key sequences pass through."),
-                              NULL);
+        gtk_widget_set_tooltip_text (
+            __nocheck_radio,
+            _("Let all key sequences pass through.")
+        );
         gtk_radio_button_set_group (GTK_RADIO_BUTTON (__nocheck_radio),
                                     isc_radiobutton_group);
         isc_radiobutton_group
@@ -272,11 +269,11 @@ create_setup_window ()
         gtk_widget_show (__basiccheck_radio);
         gtk_box_pack_start (GTK_BOX (vbox), __basiccheck_radio,
                             FALSE, FALSE, 0);
-        gtk_tooltips_set_tip (tooltips,
-                              __basiccheck_radio,
-                              _("Check using basic rule, just to guarantee "
-                                "character order to be suitable for display."),
-                              NULL);
+        gtk_widget_set_tooltip_text (
+            __basiccheck_radio,
+            _("Check using basic rule, just to guarantee "
+            "character order to be suitable for display.")
+        );
         gtk_radio_button_set_group (GTK_RADIO_BUTTON (__basiccheck_radio),
                                     isc_radiobutton_group);
         isc_radiobutton_group
@@ -288,10 +285,10 @@ create_setup_window ()
         gtk_widget_show (__strictcheck_radio);
         gtk_box_pack_start (GTK_BOX (vbox), __strictcheck_radio,
                             FALSE, FALSE, 0);
-        gtk_tooltips_set_tip (tooltips,
-                              __strictcheck_radio,
-                              _("Check using more strict orthographical rules."),
-                              NULL);
+        gtk_widget_set_tooltip_text (
+            __strictcheck_radio,
+            _("Check using more strict orthographical rules.")
+        );
         gtk_radio_button_set_group (GTK_RADIO_BUTTON (__strictcheck_radio),
                                     isc_radiobutton_group);
         isc_radiobutton_group

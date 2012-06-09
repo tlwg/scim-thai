@@ -1,5 +1,15 @@
 2012-06-09  Theppitak Karoonboonyanan  <thep@linux.thai.net>
 
+	Migrate away deprecated APIs, fixing FTBFS.
+
+	* src/scim_thai_imengine_setup.cpp (create_setup_window):
+	  - Drop the deprecated GtkTooltips object and set widget tooltip
+	    directly with the new gtk_widget_set_tooltip_text().
+	* src/scim_thai_imengine_setup.cpp (create_setup_window):
+	  - Replace gtk_vbox_new() with gtk_box_new() with GtkOrientation.
+
+2012-06-09  Theppitak Karoonboonyanan  <thep@linux.thai.net>
+
 	* configure.ac: Post-release version suffix added.
 
 2011-06-27  Theppitak Karoonboonyanan  <thep@linux.thai.net>
