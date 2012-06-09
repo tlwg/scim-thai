@@ -1,0 +1,21 @@
+Version 0.1.3 (2012-06-09)
+=============
+- Migrate away deprecated GTK+ APIs, fixing FTBFS.
+
+Version 0.1.2 (2011-06-27)
+=============
+- Update gettext support using autopoint.
+- Fix compiling error when libthai is installed in non-standard location.
+- Improve linker flags handling.
+
+Version 0.1.1 (2008-05-24)
+=============
+- Fix compiling error with GCC 4.3
+
+Version 0.1.0 (2006-07-20)
+=============
+- Initial release.
+- Keyboard layout supports: Ketmanee, TIS-820.2538, Pattachote.
+- Input sequence check/correction using libthai.
+- Setup GUI.
+
