@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- */
 /*
- *  Copyright (C) 2006 Theppitak Karoonboonyanan <thep@linux.thai.net>
+ *  Copyright (C) 2006 Theppitak Karoonboonyanan <theppitak@gmail.com>
  *
  *  This program is free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
@@ -118,7 +118,7 @@ ThaiFactory::get_name () const
 WideString
 ThaiFactory::get_authors () const
 {
-    return utf8_mbstowcs (String ("Theppitak Karoonboonyanan <thep@linux.thai.net>"));
+    return utf8_mbstowcs (String ("Theppitak Karoonboonyanan <theppitak@gmail.com>"));
 }
 
 WideString
