@@ -1,3 +1,13 @@
+2016-01-22  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
+	Replace deprecated GtkMisc alignment functions.
+
+	* src/scim_thai_imengine_setup.cpp (create_setup_window):
+	  - Replace deprecated gtk_misc_set_alignment() (since GTK+ 3.16)
+	    with gtk_label_set_xalign() and gtk_label_set_yalign().
+	* configure.ac:
+	  - Require GTK+ >= 3.16.
+
 2016-01-21  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
 	* configure.ac, src/*.h, src/*.cpp: Update my e-mail address.

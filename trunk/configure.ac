@@ -47,6 +47,7 @@ AM_CONDITIONAL(SCIM_BUILD_SETUP, [test "$SCIM_HAS_GTKUTILS" = "yes"])
 
 if test "$SCIM_HAS_GTKUTILS" = "yes"; then
   SCIM_BUILD_SETUP=1
+  PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= 3.16])
 else
   SCIM_BUILD_SETUP=0
 fi
