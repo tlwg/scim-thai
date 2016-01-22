@@ -1,5 +1,15 @@
 2016-01-22  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
+	Drop deprecated GtkAlignment.
+
+	* src/scim_thai_imengine_setup.cpp (create_setup_window):
+	  - Remove intermediate GtkAlignment widgets (which has been
+	    deprecated since GTK+ 3.14) and directly add their child VBox
+	    to the parents, and then set the margin of the child VBox directly.
+	  - The required GTK+ >= 3.14 is already satisfied by previous commit.
+
+2016-01-22  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
 	Replace deprecated GtkMisc alignment functions.
 
 	* src/scim_thai_imengine_setup.cpp (create_setup_window):

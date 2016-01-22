@@ -178,14 +178,10 @@ create_setup_window ()
         gtk_label_set_xalign (GTK_LABEL (label), 0);
         gtk_label_set_yalign (GTK_LABEL (label), 0.5);
 
-        alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-        gtk_widget_show (alignment);
-        gtk_container_add (GTK_CONTAINER (window), alignment);
-        gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 0, 0, 12, 0);
-
         vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
         gtk_widget_show (vbox);
-        gtk_container_add (GTK_CONTAINER (alignment), vbox);
+        gtk_widget_set_margin_start (vbox, 12);
+        gtk_box_pack_start (GTK_BOX (window), vbox, FALSE, FALSE, 0);
 
         // - Ketmanee keyboard layout
         __ketmanee_radio
@@ -242,14 +238,10 @@ create_setup_window ()
         gtk_label_set_xalign (GTK_LABEL (label), 0);
         gtk_label_set_yalign (GTK_LABEL (label), 0.5);
 
-        alignment = gtk_alignment_new (0.5, 0.5, 1, 1);
-        gtk_widget_show (alignment);
-        gtk_container_add (GTK_CONTAINER (window), alignment);
-        gtk_alignment_set_padding (GTK_ALIGNMENT (alignment), 0, 0, 12, 0);
-
         vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 0);
         gtk_widget_show (vbox);
-        gtk_container_add (GTK_CONTAINER (alignment), vbox);
+        gtk_widget_set_margin_start (vbox, 12);
+        gtk_box_pack_start (GTK_BOX (window), vbox, FALSE, FALSE, 0);
 
         // - "No Check" choice
         __nocheck_radio
