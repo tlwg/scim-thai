@@ -1,5 +1,24 @@
 2016-06-16  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
+	Fix 'make distcheck' error.
+
+	This package installs SCIM module in the directory queried
+	from scim pkg-config. This fails 'make distcheck', as the
+	--prefix option is not obeyed. What suggested in GNU Automake
+	manual is to prevent the ${prefix} substitution:
+
+	https://www.gnu.org/software/automake/manual/html_node/Hard_002dCoded-Install-Paths.html
+
+	From now on, user has to pass --prefix explicitly to get the
+	module installed at the right place, which should already be
+	the case for most builds.
+
+	* configure.ac:
+	  - Call pkg-config with ${prefix} substitution prevented
+	    when querying icondir and moduledir.
+
+2016-06-16  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
 	Switch to XZ tarball compression.
 
 	* configure.ac:

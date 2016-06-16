@@ -91,8 +91,9 @@ else
 fi
 AC_SUBST(SCIM_DEBUG_FLAGS)
 
-SCIM_ICONDIR=`$PKG_CONFIG --variable=icondir scim`
-SCIM_MODULEDIR=`$PKG_CONFIG --variable=moduledir scim`
+RAW_PKG_CONFIG="$PKG_CONFIG --define-variable=prefix='\${prefix}'"
+SCIM_ICONDIR=`$RAW_PKG_CONFIG --variable=icondir scim`
+SCIM_MODULEDIR=`$RAW_PKG_CONFIG --variable=moduledir scim`
 
 if test "x$SCIM_ICONDIR" = "x"; then
   SCIM_ICONDIR=${datadir}/scim/icons
