@@ -7,7 +7,7 @@ AC_CONFIG_SRCDIR([src/scim_thai_imengine.h])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([dist-xz no-dist-gzip])
 
 # gettext
 AM_GNU_GETTEXT_VERSION([0.18.1])
