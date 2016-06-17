@@ -1,3 +1,10 @@
+2016-06-17  Theppitak Karoonboonyanan  <theppitak@gmail.com>
+
+	Update project info.
+
+	* AUTHOR: Update my e-mail address.
+	* README: Use LTN URL instead of sourceforge for the LibThai project.
+
 2016-06-16  Theppitak Karoonboonyanan  <theppitak@gmail.com>
 
 	Fix 'make distcheck' error.
