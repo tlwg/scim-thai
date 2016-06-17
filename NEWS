@@ -1,3 +1,10 @@
+Version 0.1.4 (2016-06-17)
+=============
+- Get rid of deprecated GTK+ APIs in setup program, now requiring GTK+ >= 3.16.
+- Switched to XZ tarball compression.
+- Fix 'make distcheck' error, now --prefix option is used as the base
+  installation path
+
 Version 0.1.3 (2012-06-09)
 =============
 - Migrate away deprecated GTK+ APIs, fixing FTBFS.
