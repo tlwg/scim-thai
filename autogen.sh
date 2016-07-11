@@ -16,5 +16,6 @@ echo "Applying automake..."
 automake --add-missing
 
 echo "Applying autoconf..."
-autoconf
+# Use -f so git-version-gen does refresh
+autoconf -f
 
