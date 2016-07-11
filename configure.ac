@@ -2,7 +2,9 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.59)
-AC_INIT(scim-thai, 0.1.4, theppitak@gmail.com)
+AC_INIT(scim-thai,
+        m4_esyscmd([build-aux/git-version-gen]),
+        theppitak@gmail.com)
 AC_CONFIG_SRCDIR([src/scim_thai_imengine.h])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_MACRO_DIR([m4])

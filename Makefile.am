@@ -3,3 +3,6 @@ SUBDIRS = src data po
 ACLOCAL_AMFLAGS = -I m4
 
 EXTRA_DIST = config.rpath
+
+dist-hook:
+	echo $(VERSION) > $(distdir)/VERSION
