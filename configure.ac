@@ -4,7 +4,7 @@
 AC_PREREQ(2.59)
 AC_INIT(scim-thai,
         m4_esyscmd([build-aux/git-version-gen]),
-        theppitak@gmail.com)
+        [https://github.com/tlwg/scim-thai/issues])
 AC_CONFIG_SRCDIR([src/scim_thai_imengine.h])
 AC_CONFIG_HEADER([config.h])
 AC_CONFIG_MACRO_DIR([m4])
