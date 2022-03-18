@@ -100,7 +100,7 @@ ThaiInstance::_get_previous_cell ()
             th_prev_cell (tis_text + begin_index, cursor_index - begin_index,
                           &the_cell, true);
         }
-        delete tis_text;
+        delete[] tis_text;
     }
     else
     {
